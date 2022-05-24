@@ -1,0 +1,108 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\Admin\" />
+    <None Remove="Areas\Admin\Controllers\" />
+    <None Remove="Areas\Admin\Data\" />
+    <None Remove="Areas\Admin\Models\" />
+    <None Remove="Areas\Admin\View\" />
+    <None Remove="Areas\Ogrenci\" />
+    <None Remove="Areas\Ogrenci\Controllers\" />
+    <None Remove="Areas\Ogrenci\Data\" />
+    <None Remove="Areas\Ogrenci\Models\" />
+    <None Remove="Areas\Ogrenci\Views\" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="Areas\Admin\Views\Authentication\" />
+    <None Remove="Areas\Admin\Views\Shared\" />
+    <None Remove="Areas\Admin\Views\Home\" />
+    <None Remove="NuGet.PackageManagement" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Npgsql" />
+    <None Remove="System.Configuration.ConfigurationManager" />
+    <None Remove="FluentMigrator.Runner.Postgres" />
+    <None Remove="Extensions\" />
+    <None Remove="Areas\Admin\Components\" />
+    <None Remove="Areas\Admin\Views\Shared\Components\" />
+    <None Remove="Areas\Admin\Views\Shared\Components\LeftMenu\" />
+    <None Remove="Areas\Admin\Views\Shared\Components\TopMenu\" />
+    <None Remove="Areas\Admin\Views\Shared\Components\InfoBoxes\" />
+    <None Remove="Areas\Admin\Views\Administrator\" />
+    <None Remove="Areas\Admin\Filters\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.0" />
+    <PackageReference Include="Npgsql" Version="5.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="FluentMigrator.Runner.Postgres" Version="3.3.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Admin\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Ogrenci\" />
+    <Folder Include="Areas\Ogrenci\Controllers\" />
+    <Folder Include="Areas\Ogrenci\Data\" />
+    <Folder Include="Areas\Ogrenci\Models\" />
+    <Folder Include="Areas\Ogrenci\Views\" />
+    <Folder Include="Areas\Admin\Views\Authentication\" />
+    <Folder Include="wwwroot\AdminAssets\" />
+    <Folder Include="wwwroot\AdminAssets\dist\" />
+    <Folder Include="wwwroot\AdminAssets\dist\css\" />
+    <Folder Include="wwwroot\AdminAssets\dist\img\" />
+    <Folder Include="wwwroot\AdminAssets\dist\js\" />
+    <Folder Include="wwwroot\AdminAssets\plugins\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Areas\Admin\Components\" />
+    <Folder Include="Areas\Admin\Views\Shared\Components\" />
+    <Folder Include="Areas\Admin\Views\Shared\Components\LeftMenu\" />
+    <Folder Include="Areas\Admin\Views\Shared\Components\TopMenu\" />
+    <Folder Include="Areas\Admin\Views\Shared\Components\InfoBoxes\" />
+    <Folder Include="Areas\Admin\Views\Administrator\" />
+    <Folder Include="Areas\Admin\Filters\" />
+    <Folder Include="wwwroot\AdminPhotos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HepsiSuradav2.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\AdminAssets\" />
+    <Content Remove="wwwroot\AdminAssets\dist\" />
+    <Content Remove="wwwroot\AdminAssets\dist\css\" />
+    <Content Remove="wwwroot\AdminAssets\dist\img\" />
+    <Content Remove="wwwroot\AdminAssets\dist\js\" />
+    <Content Remove="wwwroot\AdminAssets\plugins\" />
+    <Content Remove="wwwroot\lib\sweetalert2\dist\sweetalert2.css" />
+    <Content Remove="wwwroot\AdminPhotos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HepsiSurada.Business\HepsiSurada.Business.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\HepsiSurada.Model\HepsiSurada.Model.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\HepsiSurada.DataAccess\HepsiSurada.DataAccess.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

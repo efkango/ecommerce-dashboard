@@ -1,0 +1,194 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+@using HepsiSurada.Model.Entities
+@model List<Role>
+
+@section customStyle{
+    <link href="~/lib/sweetalert2/dist/sweetalert2.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+}
+}
+@section customScripts{
+
+    <script src="~/lib/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script>$(document).ready(function () {
+    $("#btnAdd").click(function () {
+        @*var formData = new FormData();
+        var files = $("#photoPath")[0].files[0];
+
+        formData.append(files.name, files);
+
+        $.ajax({
+            url: "/Admin/Administrator/UploadAdminPhoto",
+            method: "post",
+            datatype: "json",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (uploadResult) {
+                if (uploadResult.result) {*@
+
+
+                    var formModel =
+                    {
+                        FullName: $("#txtFullName").val(),
+                        Email: $("#txtEmail").val(),
+                        Password: $("#txtPassword").val(),
+                        RoleId: $("#ddlRoles").val(),
+                        @*PhotoPath: uploadResult.PhotoPath,*@
+                        Aktif: $("#chkAktif").is(":checked"),
+                        HireDate: $("#txtHireDate").val()
+
+
+
+                    }
+
+                    $.ajax({
+                        url: "/Admin/Administrator/Add",
+                        method: "post",
+                        datatype: "json",
+                        data: { vm: formModel },
+                        success: function (response) {
+                            if (response.result) {
+
+                                Swal.fire(
+                                    response.message,
+                                    '',
+                                    'success'
+                                )
+
+                            }
+                        }
+
+
+                    });
+
+
+
+                
+          
+
+
+
+
+
+
+
+
+
+
+            });
+    });
+
+    </script>
+
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-12 ">
+            <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Yeni Yönetici Formu</h3>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form>
+
+                    <div class="form-group">
+                        <label>Ad-Soyad</label>
+                        <input id="txtFullName" class="form-control" type="text" placeholder="Ad-Soyad Giriniz">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>E-Mail</label>
+                        <input type="email" class="form-control" id="txtEmail" placeholder="E-Mail Giriniz">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Şifre</label>
+                        <input type="password" class="form-control" id="txtPassword" placeholder="Şifreyi Giriniz">
+                    </div>
+
+
+
+
+
+                    @*<div class="form-group">
+                            <label>Fotoğraf</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="photoPath">
+                                    <label class="custom-file-label">Fotoğrafı Seçiniz</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Yükle</span>
+                                </div>
+                            </div>
+                        </div>*@
+
+
+
+                    <div class="form-group">
+                        <label>Giriş Tarihi</label>
+                        <input id="txtHireDate" class="form-control" type="text" placeholder="Çalışanın İşe Alındığı Günü Giriniz">
+                    </div>
+
+                    
+
+
+            <div class="form-group">
+                <label>Rolleri</label>
+                <select id="ddlRoles" multiple class="form-control">
+                    @foreach (var role in Model)
+                    {
+                        <option value="@role.Id">@role.RoleName</option>
+
+                    }
+
+
+
+
+                </select>
+
+            </div>
+
+
+            <div class="form-check">
+                <input id="chkAktif" class="form-check-input" type="checkbox">
+                <label class="form-check-label">Aktif </label>
+            </div>
+
+
+
+
+            <button id="btnAdd" type="button" class="btn btn-primary">Kaydet</button>
+
+
+
+
+            </form>
+        </div>
+
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+
+

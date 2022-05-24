@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "sweetalert2@11.4.9",
+      "destination": "wwwroot/lib/sweetalert2/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "chartjs-plugin-zoom@1.2.1",
+      "destination": "wwwroot/lib/chartjs-plugin-zoom/"
+    }
+  ]
+}

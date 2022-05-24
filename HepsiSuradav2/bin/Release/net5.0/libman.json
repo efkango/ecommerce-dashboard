@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "sweetalert2@11.4.9",
+      "destination": "wwwroot/lib/sweetalert2/"
+    }
+  ]
+}
